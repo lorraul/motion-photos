@@ -26,10 +26,13 @@ function extract {
   fi
 }
 
-for f in "$@"; do
-  if [[ "$f" == MVIMG*jpg ]]; then
+echo "Processing motion photos"
+
+for f in *.jpg;  do 
+  echo "Processing $f"
+  if [[ "$f" == *jpg ]]; then
     extract "$f"
   else
     echo "Ignoring $f because its file name does not match MVIMG*jpg pattern"
-  fi
-done
+  fi 
+done;
